@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function changeCode(){
+		//得到图片元素
+		var img = document.getElementsByTagName("img")[0];
+		//img.setAttribute("src","/day09_00_HttpServletResponse/servlet/demo4");//XML Dom 语法
+		img.src = "/Servlet1/Servletyanzhenma?time="+new Date().getTime();
+	}
+</script>
+</head>
+<body>
+	<form action="/Servlet1/doLogin" method="post">
+		用户名：<input type="text" name="userName"/><br>
+		密码：<input type="password" name="pwd"/><br>
+		验证码：<input type="text" name="code"/>
+		<img src="/Servlet1/Servletyanzhenma" onclick="changeCode()"/><a href="javascript:changeCode()" >看不清换一张</a><br>
+		<input type="submit" value="登录"/><br>
+	</form>
+</body>
+</html>
